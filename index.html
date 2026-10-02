@@ -88,14 +88,50 @@
 </script>
 </head>
 <body class="с-липкой-кнопкой">
-<section class="блок блок--первый-экран первый-экран--разворот светлый" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото">
+<section class="блок блок--первый-экран первый-экран--разворот тёмный фон--пятна" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото">
   <header class="шапка">
-    <a class="шапка__лого" href="#">Юлия Судоргина · психолог про отношения</a>
+    <a class="шапка__лого" href="#" style="min-width:0;white-space:normal;line-height:1.2">Юлия Судоргина<span class="доп"> · психолог про отношения</span></a>
     <span class="шапка__лиц"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
 </svg><span><span class="полн">Консультации онлайн</span><span class="кратко">Онлайн</span></span></span>
   </header>
   <span class="пятно пятно--1"></span><span class="пятно пятно--2"></span>
+  <style>
+  /* 02.10.2026: без виньетки. Фон экрана — ровный цвет #2b232b, фон на портрете перекрашен в тот же цвет, поэтому границы кадра не видно и растворять края не нужно. Только низ (стол) плавно уходит в тот же цвет. */
+  #экран-1 { min-height: min(100svh, 960px); padding-bottom: 4rem; background: #2b232b; background-image: none; }
+  #экран-1 .пятно--1, #экран-1 .пятно--2, #экран-1::before, #экран-1::after { display: none; background: none; }
+  #экран-1 .лид { font-size: 1.25rem; color: color-mix(in srgb, var(--текст-ключа, #fff) 82%, transparent); }
+  #экран-1 .список-иконок li { font-size: 1rem; }
+  #экран-1 .кнопка--главная { min-height: 3.25rem; padding-inline: 2rem; }
+  #экран-1 .первый-экран__доверие { max-width: 30rem; }
+  #экран-1 .кнопка--главная { box-shadow: none; }
+  #экран-1 .шапка { width: calc(100% - 2 * var(--отступ-блока)); padding-inline: 0; margin-inline: auto; box-sizing: border-box; }
+  #экран-1 .первый-экран__картинка.картинка--край img { filter: none; }
+  @media (min-width: 900px) {
+    #экран-1 .блок__внутри { grid-template-columns: minmax(0, 36rem) minmax(0, 1fr); column-gap: 2rem; align-items: center; }
+    #экран-1 { position: relative; overflow: hidden; --H: 66svh; --z: 1; --W: min(calc(var(--H) * .93), 100vw - 37rem); --ML: max(2rem, calc((100vw - var(--W) - 36rem * var(--z)) * .8)); }
+    #экран-1 .первый-экран__текст { zoom: var(--z); }
+    #экран-1 .первый-экран__картинка { position: absolute; right: 0; bottom: 0; top: auto; margin: 0; width: var(--W); height: var(--H); max-width: none; max-height: none; transform: none; aspect-ratio: auto; min-height: 0; }
+    #экран-1 .первый-экран__картинка.картинка--край img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; object-position: 0 100%; display: block; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%); mask-image: linear-gradient(to right, transparent 0, #000 14%); }
+    #экран-1 .блок__внутри { grid-template-columns: minmax(0, 36rem); position: static; width: auto; max-width: none; margin-left: var(--ML); margin-right: 0; }
+    #экран-1 .шапка { width: auto; max-width: none; margin-left: var(--ML); margin-right: 2rem; }
+  }
+  @media (min-width: 1300px) {
+    #экран-1 { --z: 1.08; --H: 78svh; }
+  }
+  @media (min-width: 1700px) {
+    #экран-1 { --z: 1.08; }
+  }
+  @media (max-width: 899px) {
+    #экран-1 { min-height: 0; padding-bottom: 2rem; }
+    #экран-1 .блок__внутри { grid-template-columns: minmax(0, 1fr); }
+    #экран-1 .первый-экран__картинка { width: 100vw; height: 330px; max-width: none; margin: 0 calc(50% - 50vw) .75rem; }
+    #экран-1 .первый-экран__картинка img { width: 100%; height: 100%; object-fit: cover; object-position: 6% 100%; -webkit-mask-image: none; mask-image: none; }
+    #экран-1 .шапка__лого .доп { display: none; }
+    #экран-1 h1 .хвост { margin-top: 0; font-size: 1em; line-height: inherit; }
+    #экран-1 h1 { font-size: 1.9rem; line-height: 1.1; }
+  }
+  </style>
   <div class="блок__внутри">
     <div class="первый-экран__текст">
       <p class="кикер"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -104,21 +140,342 @@
       <h1>Терять семью не хочется. А жить как сейчас<span class="делитель"> —</span> <span class="хвост">уже <em class="акцент">невозможно</em></span></h1>
       <p class="лид">Меняется состояние — и из другого состояния приходят другие решения</p>
       <ul class="список-иконок">
-        <li><i class="галка"></i><span>Спите в разных комнатах — и уже не помните, когда это началось</span></li>
-        <li><i class="галка"></i><span>Правда вскрылась — и тревога в груди не отпускает</span></li>
-        <li><i class="галка"></i><span>И всё чаще ловите себя на мысли, что вами просто пользуются</span></li>
+        <li><i class="галка"></i><span>Не понимаете, что у вас вообще происходит и почему так больно.</span></li>
+        <li><i class="галка"></i><span>Боитесь принять решение, о котором потом пожалеете.</span></li>
+        <li><i class="галка"></i><span>Хотите сначала прийти в себя, а уже потом решать, что делать с отношениями.</span></li>
       </ul>
       <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina">Написать мне</a></div>
       <p class="мелкий первый-экран__доверие"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
 </svg> Напишите, даже если не знаете, с чего начать. Я отвечу и расспрошу сама — дальше уже не одна</p>
     </div>
-    <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .22">
-      <picture><source media="(max-width: 899px)" srcset="img/portret.webp"><img src="img/portret.webp" alt="Терять семью не хочется. А жить как сейчас уже невозможно" data-лицо="50,22" fetchpriority="high"></picture>
+    <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .30">
+      <picture><source media="(max-width: 899px)" srcset="img/portret-shirokiy.webp"><img src="img/portret-shirokiy.webp" alt="Юлия Судоргина, психолог: сидит за столом, спокойный взгляд" data-лицо="30,28" fetchpriority="high"></picture>
     </figure>
   </div>
 </section>
-<div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina">Написать мне</a></div>
+<section class="блок блок--боль тёмный второй" id="экран-02" data-тип="боль" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="письмо">
+      <div class="письмо__шапка">
+        <p class="кикер">С чем ко мне приходят</p>
+        <h2>Об этом не рассказывают даже подругам</h2>
+      </div>
+      <ul class="письмо__список">
+        <li class="письмо__строка письмо__строка--одна">
+          <p class="письмо__имя">Мы уже три недели почти не разговариваем. И я не знаю, как это исправить.</p>
+        </li>
+        <li class="письмо__строка письмо__строка--одна">
+          <p class="письмо__имя">Я хочу просто выспаться. Мне уже ничего больше не хочется.</p>
+        </li>
+        <li class="письмо__строка письмо__строка--одна">
+          <p class="письмо__имя">Мне всё чаще кажется, что со мной что-то не так.</p>
+        </li>
+        <li class="письмо__строка письмо__строка--одна">
+          <p class="письмо__имя">Я узнала, что он мне изменяет. И не понимаю, как теперь с ним жить.</p>
+        </li>
+        <li class="письмо__строка письмо__строка--одна">
+          <p class="письмо__имя">У меня появился другой.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="блок блок--что-получите тёмный" id="экран-03" data-тип="что-получите" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="перемена">
+      <div class="перемена__главное">
+        <div class="перемена__шапка">
+          <p class="кикер">С чем уходят</p>
+          <h2>Что меняется — и что не меняется</h2>
+        </div>
+        <ul class="перемена__список">
+          <li class="перемена__строка">
+            <p class="перемена__было">Нашли переписку и с тех пор не спите</p>
+            <p class="перемена__стало">становится немного легче переживать то, что произошло, и не оставаться с этим один на один</p>
+          </li>
+          <li class="перемена__строка">
+            <p class="перемена__было">Трясёт так, что не можете ни есть, ни работать</p>
+            <p class="перемена__стало">становится немного легче, и получается хотя бы чуть-чуть выдохнуть</p>
+          </li>
+          <li class="перемена__строка">
+            <p class="перемена__было">Срываетесь на детей, хотя злитесь совсем не на них</p>
+            <p class="перемена__стало">и вечером встречаете их без крика</p>
+          </li>
+          <li class="перемена__строка">
+            <p class="перемена__было">Не знаете, врёт он или говорит правду</p>
+            <p class="перемена__стало">перестаёте следить за каждым словом и движением и всё время накручивать себя</p>
+          </li>
+          <li class="перемена__строка">
+            <p class="перемена__было">Терпите ради детей и не знаете, правильно ли делаете</p>
+            <p class="перемена__стало">приходите к своему решению. Не к тому, которое вам посоветовали, а к тому, которое подходит вам</p>
+          </li>
+          <li class="перемена__строка">
+            <p class="перемена__было">Стыдно рассказать даже подругам</p>
+            <p class="перемена__стало">впервые проговариваете всё как есть и не слышите в ответ ни осуждения, ни «да я бы на твоём месте давно ушла»</p>
+          </li>
+        </ul>
+      </div>
+      <div class="перемена__бок">
+        <figure class="фото"><picture><img src="img/nit.webp" alt="Рисунок: женщина и мужчина спиной друг к другу, красная нить от запутанного клубка слева тянется ровной линией" loading="lazy" style="width:100%;height:auto;aspect-ratio:auto;object-fit:contain;display:block;border-radius:var(--радиус-карточки, var(--радиус));-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect"></picture></figure>
+        <div class="перемена__итог">
+          <b>Никого вокруг мы не меняем — ни мужа, ни его родню. Работаем только с вами</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="блок блок--программа тёмный второй" id="экран-04" data-тип="программа" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="дорога">
+      <div class="дорога__шапка">
+        <p class="кикер">Как это происходит</p>
+        <h2>Что будет после того, как вы напишете</h2>
+      </div>
+      <ol class="дорога__шаги">
+        <li class="шаг">
+          <span class="шаг__номер" aria-hidden="true"></span>
+          <div class="шаг__карточка">
+
+            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-1-phone.webp" alt="Рисунок: телефон с перепиской" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            <h3 class="шаг__имя">Пишете</h3>
+            <p class="шаг__текст">Можно как есть, хоть одной строкой. Не нужно заранее формулировать запрос или рассказывать всю историю: я отвечу, задам вопросы, если нужно, и дальше сориентируемся</p>
+          </div>
+        </li>
+        <li class="шаг">
+          <span class="шаг__номер" aria-hidden="true"></span>
+          <div class="шаг__карточка">
+
+            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-2-clock.webp" alt="Рисунок: часы" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            <h3 class="шаг__имя">Договариваемся о времени</h3>
+            <p class="шаг__текст">Встречаемся онлайн в MAX или Телемосте, я пришлю ссылку. Важно, чтобы вы были одни в комнате и вас никто не отвлекал, и обязательно с включённой камерой: для моей работы важно вас видеть. Если есть возможность, поставьте рядом второй стул</p>
+          </div>
+        </li>
+        <li class="шаг">
+          <span class="шаг__номер" aria-hidden="true"></span>
+          <div class="шаг__карточка">
+
+            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-3-talk.webp" alt="Рисунок: разговор двух женщин" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            <h3 class="шаг__имя">Сначала разбираемся, что происходит</h3>
+            <p class="шаг__текст">Расспрошу вас о ситуации: что случилось, что сейчас беспокоит больше всего, что вы чувствуете. По ходу разговора у меня появляются предположения, с чем тут можно работать и куда идти дальше</p>
+          </div>
+        </li>
+        <li class="шаг">
+          <span class="шаг__номер" aria-hidden="true"></span>
+          <div class="шаг__карточка">
+
+            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-4-write.webp" alt="Рисунок: рука с ручкой над тетрадью" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            <h3 class="шаг__имя">Дальше работаем</h3>
+            <p class="шаг__текст">Заранее сказать, как именно пройдёт встреча, нельзя. Иногда больше разговариваем: если ситуация острая, вам в первую очередь нужно проговорить то, что происходит. Иногда работаем с образами и чувствами, можем использовать второй стул. Иногда беру метафорические карты или фигурки на онлайн-платформе. Способ я выбираю уже во время встречи — по тому, с чем вы пришли. Около часа, иногда полтора — доплачивать не нужно</p>
+          </div>
+        </li>
+        <li class="шаг">
+          <span class="шаг__номер" aria-hidden="true"></span>
+          <div class="шаг__карточка">
+
+            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-5-window.webp" alt="Рисунок: открытое окно" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            <h3 class="шаг__имя">В конце подводим итог</h3>
+            <p class="шаг__текст">Смотрим, что изменилось за время работы, что вы сейчас чувствуете и с чем уходите. Иногда даю домашнее задание, иногда оно вообще не нужно. А понаблюдать после встречи за собой и своим состоянием попрошу в любом случае</p>
+          </div>
+        </li>
+      </ol>
+      <p class="врезка">Специально готовиться к встрече не нужно. Не надо придумывать «правильный запрос» или заранее составлять рассказ — можно прийти и начать с того, что беспокоит больше всего</p>
+    </div>
+  </div>
+</section>
+<section class="блок блок--о-себе светлый" id="экран-05" data-тип="о-себе" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="обо-мне">
+      <div class="обо-мне__шапка">
+        <p class="кикер">Кто я</p>
+        <h2>Обо мне</h2>
+        <p class="лид">Юлия Судоргина · психолог про отношения</p>
+      </div>
+      <div class="обо-мне__рассказ">
+        <div class="обо-мне__группа">
+        <p class="обо-мне__абзац">Я не продаю консультации любой ценой. У меня есть стабильная работа, поэтому мне не нужно навязывать вам лишние консультации.</p>
+        <p class="обо-мне__абзац">Если вижу, что могу помочь — работаем. А если вижу, что вы уже справляетесь сами — в добрый путь. Я не буду костылём на всю жизнь.</p>
+        <p class="обо-мне__абзац">У меня нет бесплатной встречи «на знакомство». Если вы пришли ко мне на сессию, мы сразу работаем по вашему запросу.</p>
+        </div>
+        <div class="обо-мне__группа">
+        <p class="обо-мне__абзац">Я психолог-консультант. Диплом получила в 2024 году. Работаю с эмоционально-образной терапией, метафорическими картами и системными расстановками.</p>
+        <p class="обо-мне__абзац">Там, где нужна медицинская помощь, не работаю — я психолог, не врач.</p>
+        <p class="обо-мне__абзац">10 лет я в найме и каждый день работаю с разными людьми. За это время я научилась быстро находить общий язык.</p>
+        </div>
+      </div>
+      <div class="обо-мне__бок">
+        <figure class="фото обо-мне__портрет"><img src="img/obo-mne-teplyi-fon.webp" alt="Юлия Судоргина, психолог: живое фото без обработки, спокойный взгляд" loading="lazy"></figure>
+        <ul class="обо-мне__цифры">
+          <li class="обо-мне__цифра"><b>10 лет</b><span>в найме — работа с людьми</span></li>
+          <li class="обо-мне__цифра"><b>2 года</b><span>практики психологом</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="блок блок--услуги-и-цены тёмный" id="экран-06" data-тип="услуги-и-цены" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="секция__шапка секция__шапка--центр">
+      <p class="кикер">Сколько стоит</p>
+      <h2>Три ступени — по тому, что сейчас нужно</h2>
+      <p class="лид секция__лид">Встреча идёт час, если нужно — полтора. Доплаты не будет</p>
+    </div>
+    <div class="тарифы секция__тело">
+      <article class="тариф">
+        <span class="тариф__метка">срочно</span>
+        <h3 class="тариф__имя">Прожить прямо сейчас</h3>
+        <p class="тариф__цена"><b>1 000 ₽</b></p>
+        <p class="тариф__пояснение">Когда произошло что-то, после чего трудно есть, спать, работать и оставаться с этим одной.</p>
+        <ul class="тариф__состав">
+          <li>Одна встреча онлайн</li>
+          <li>Причину разбирать не будем — это про сегодня. И это не знакомство и не пробная встреча</li>
+        </ul>
+      </article>
+      <article class="тариф">
+        <span class="тариф__метка">с чего начинают</span>
+        <h3 class="тариф__имя">Одна консультация</h3>
+        <p class="тариф__цена"><b>3 000 ₽</b></p>
+        <p class="тариф__пояснение">Когда хочется разобраться, что происходит, и понять, что делать дальше.</p>
+      </article>
+      <article class="тариф тариф--акцент">
+        <span class="тариф__метка">чаще всего берут</span>
+        <h3 class="тариф__имя">Четыре консультации</h3>
+        <p class="тариф__цена"><b>10 000 ₽</b></p>
+        <p class="тариф__пояснение">2 500 ₽ за встречу. Встречаемся раз в неделю: между встречами вы делаете то, что решили, а на следующей смотрим, что получилось</p>
+        <ul class="тариф__состав">
+          <li>Всё из «Одной консультации» плюс ещё три встречи</li>
+          <li>Выгода 2 000 ₽</li>
+        </ul>
+        <a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina">Написать мне</a>
+      </article>
+    </div>
+    <p class="мелкий пояснение-цен">Если после первой встречи поймёте, что я не ваш психолог, — верну деньги. Оплата за сутки до встречи, перенести или отменить — тоже за сутки. Я самозанятая, пришлю чек</p>
+  </div>
+</section>
+<section class="блок блок--отзывы светлый" id="экран-07" data-тип="отзывы" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="слова">
+      <div class="слова__шапка">
+        <p class="кикер">Что говорят</p>
+        <h2>Приходят с одним, а важным оказывается другое</h2>
+      </div>
+      <ul class="слова__список">
+        <li>
+          <figure class="слово">
+            <span class="слово__знак" aria-hidden="true"></span>
+            <blockquote class="слово__текст">Это было, казалось, просто, но одновременно глубоко. Юлины опыт и мудрость подсказывали ей слова, которые снимали засохшую корку с моих непрожитых чувств, и они пробивались из меня слезами и всхлипами. А на их место приходила тишина и догадка: «Я могу попробовать иначе». После мне захотелось делать домашние дела — третий час что-то тру и мою</blockquote>
+            <figcaption class="слово__подпись"><cite class="слово__имя">Ольга М.</cite><span class="слово__источник">личное сообщение, Телеграм</span></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="слово">
+            <span class="слово__знак" aria-hidden="true"></span>
+            <blockquote class="слово__текст">Удивительно получилось! Я шла на сессию с одним запросом, а работали мы с детско-родительскими отношениями. После нашей встречи я впервые подумала о себе как о взрослой: раньше я всегда ощущала себя пятилетней девочкой и обижалась на всех. За время нашей сессии я повзрослела! Благодарю за чувство юмора, такт, за лёгкость и безопасность</blockquote>
+            <figcaption class="слово__подпись"><cite class="слово__имя">Елена С.</cite><span class="слово__источник">личное сообщение, Телеграм</span></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="слово">
+            <span class="слово__знак" aria-hidden="true"></span>
+            <blockquote class="слово__текст">Я пришла с одной темой, а работали мы, казалось бы, с совсем другой, но не менее важной для меня. Чувствуется твоя огромная подготовка в разных подходах психологии, умение смотреть вглубь, задавать прямые вопросы, от которых невозможно увильнуть.<br><br>Для меня было очень важно, что ты не исправляла мои «странные» формулировки фраз, а позволяла им быть такими, какие они есть, т.к. именно в том виде они являлись для меня особенно сильными.<br><br>Юлия, ты бережный и аккуратный психолог!</blockquote>
+            <figcaption class="слово__подпись"><cite class="слово__имя">Миа К.</cite><span class="слово__источник">сообщение в Телеграме</span></figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="блок блок--вопросы-ответы тёмный второй" id="экран-08" data-тип="вопросы-ответы" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="вопросы">
+      <div class="вопросы__шапка">
+        <p class="кикер">Вопросы</p>
+        <h2>Что спрашивают до того, как написать</h2>
+      </div>
+      <div class="вопросы__список">
+        <details class="вопрос" open>
+          <summary>А если муж не пойдёт? Он всё равно не изменится</summary>
+          <p class="вопрос__ответ">Никого вокруг мы не меняем. Работаем только с вами, приходить вдвоём не нужно</p>
+        </details>
+        <details class="вопрос">
+          <summary>Мне сорок четыре, разве не поздно?</summary>
+          <p class="вопрос__ответ">Шанс есть всегда. Если вы его себе не даёте, его и не будет. Дайте себе шанс сами</p>
+        </details>
+        <details class="вопрос">
+          <summary>Я не умею формулировать запрос, скажу что-нибудь не то</summary>
+          <p class="вопрос__ответ">Готовиться не надо. Что первое придёт в голову, то и правильно, а расспрошу я сама</p>
+        </details>
+        <details class="вопрос">
+          <summary>Обязательно включать камеру?</summary>
+          <p class="вопрос__ответ">Да. Мне важно вас видеть — по лицу и по телу видно то, чего не слышно в словах</p>
+        </details>
+        <details class="вопрос">
+          <summary>Работать с образами — это как? Я буду разговаривать с тем, чего не вижу?</summary>
+          <p class="вопрос__ответ">Когда вы видите сны, вы же не сходите с ума. И когда мечтаете — это тоже образы. С ними просто легче обойти защиты, чем разговорами</p>
+        </details>
+        <details class="вопрос">
+          <summary>Я уже была у психолога, и не помогло</summary>
+          <p class="вопрос__ответ">Бывает, что специалист просто не ваш. Если после первой встречи вы почувствуете, что я вам не подхожу или пользы не было, — верну деньги. Решаете вы, объяснять ничего не нужно</p>
+        </details>
+      </div>
+      <aside class="приглашение">
+        <figure class="фото приглашение__фото"><picture><img src="img/ekran8.webp" alt="Рисунок: силуэт женщины с телефоном, силуэт со спины" loading="lazy" style="width:100%;height:auto;aspect-ratio:auto;object-fit:contain;display:block"></picture></figure>
+        <p class="приглашение__заголовок">Остались вопросы?</p>
+        <p class="приглашение__текст">Напишите мне, отвечу сама. Никакой анкеты заполнять не нужно</p>
+        <a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina">Написать мне</a>
+      </aside>
+    </div>
+  </div>
+</section>
+<section class="блок блок--финал светлый фон--пятна" id="экран-09" data-тип="финал" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="конверт">
+      <p class="кикер">Последнее</p>
+      <h2>Вы уже сто раз пытались понять, что делать. А легче от этого не стало</h2>
+      <p class="конверт__лид">Писать можно в любое время, хоть ночью. Не всегда отвечаю сразу, но без ответа не оставлю.</p>
+      <div class="конверт__действие">
+        <a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina">Написать мне</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="блок блок--подвал тёмный" id="экран-10" data-тип="подвал" data-вёрстка="своя">
+  <div class="блок__внутри">
+    <div class="подвал">
+      <div>
+        <p class="подвал__имя">Юлия Судоргина · психолог про отношения</p>
+        <p class="подвал__строка">Самозанятая, ИНН 561006969300. Чек пришлю после оплаты</p>
+      </div>
+      <div class="подвал__право">
+        <p class="подвал__строка"><a href="https://t.me/Juliasydorgina" data-прямая>Телеграм @Juliasydorgina</a> · <a href="https://max.ru/u/f9LHodD0cOLPnRs6SbAJ4tX4WApMJQbghlBSH6Lw1UriFI82y_tS8nHHoPA" data-прямая>MAX</a></p>
+        <p class="подвал__строка">© 2026</p>
+      </div>
+    </div>
+  </div>
+  <dialog id="выбор-связи" aria-labelledby="выбор-связи-заг">
+    <div class="выбор__карточка">
+      <p class="выбор__заголовок" id="выбор-связи-заг">Где вам удобнее написать?</p>
+      <a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina" data-прямая>Телеграм</a>
+      <a class="кнопка кнопка--главная выбор__вторая" href="https://max.ru/u/f9LHodD0cOLPnRs6SbAJ4tX4WApMJQbghlBSH6Lw1UriFI82y_tS8nHHoPA" data-прямая>MAX</a>
+      <p class="выбор__пояснение">Отвечу в том мессенджере, где напишете</p>
+      <button type="button" class="выбор__закрыть">Закрыть</button>
+    </div>
+  </dialog>
+  <script>
+  (function () {
+    var д = document.getElementById("выбор-связи");
+    if (!д || typeof д.showModal !== "function") { return; }
+    document.addEventListener("click", function (с) {
+      var а = с.target.closest && с.target.closest('a[href^="https://t.me/Juliasydorgina"]');
+      if (!а || а.hasAttribute("data-прямая")) { return; }
+      с.preventDefault(); д.showModal();
+    });
+    д.querySelector(".выбор__закрыть").addEventListener("click", function () { д.close(); });
+    д.addEventListener("click", function (с) { if (с.target === д) { д.close(); } });
+  })();
+  </script>
+</section>
+<div class="липкая-кнопка липкая-кнопка--тёмная"><a class="кнопка кнопка--главная" href="https://t.me/Juliasydorgina">Написать мне</a></div>
 <script>
 (function () {
   var СПИТ = "главная-на-виду";                       // класс на body; правило сна — в стилях
