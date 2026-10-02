@@ -194,6 +194,21 @@
               mask-image: linear-gradient(90deg, transparent 0, #000 22%), linear-gradient(180deg, #000 72%, transparent 100%);
       -webkit-mask-composite: source-in; mask-composite: intersect; }
   }
+  /* 02.10.2026: кадр на готовом фиолетовом фоне (из Загрузок, по слову человека): у кадра свой фон, поэтому левый край плавно растворяется в тёмный цвет страницы (#170a29 — цвет левого края кадра) */
+  #экран-1 { background: #170a29 !important; }
+  #экран-1 .первый-экран__картинка { background: none !important; border-radius: 0 !important; overflow: visible !important; }
+  @media (min-width: 900px) {
+    #экран-1 { position: relative; overflow: hidden; }
+    #экран-1 .первый-экран__картинка { position: absolute !important; right: 0 !important; top: 0 !important; bottom: auto !important; left: auto !important; height: 100% !important; width: auto !important; aspect-ratio: 1169 / 1345 !important; margin: 0 !important; padding: 0 !important; }
+    #экран-1 .первый-экран__картинка.картинка--край img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 0 !important;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26%) !important; mask-image: linear-gradient(90deg, transparent 0, #000 26%) !important; }
+  }
+  @media (max-width: 899px) {
+    #экран-1 { background: linear-gradient(180deg, #170a29 0%, #2a0f3a 60%, #4a1844 100%) !important; }
+    #экран-1 .первый-экран__картинка { width: 100vw !important; max-width: none !important; height: 118vw !important; max-height: 640px !important; margin: 0 calc(50% - 50vw) -5rem !important; padding: 0 !important; }
+    #экран-1 .первый-экран__картинка.картинка--край img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 0 !important;
+      -webkit-mask-image: linear-gradient(180deg, #000 64%, transparent 98%) !important; mask-image: linear-gradient(180deg, #000 64%, transparent 98%) !important; }
+  }
   </style>
   <div class="блок__внутри">
     <div class="первый-экран__текст">
@@ -213,7 +228,7 @@
 </svg> Напишите, даже если не знаете, с чего начать. Я отвечу и расспрошу сама — дальше уже не одна</p>
     </div>
     <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .30">
-      <picture><source media="(min-width: 1200px)" srcset="img/yulia-komp.webp"><source media="(max-width: 1199px)" srcset="img/yulia-telefon.webp"><img src="img/yulia-telefon.webp" alt="Юлия Судоргина, психолог" data-лицо="30,28" fetchpriority="high"></picture>
+      <img src="img/yulia-fon.webp" alt="Юлия Судоргина, психолог" data-лицо="52,20" fetchpriority="high">
     </figure>
   </div>
 </section>
