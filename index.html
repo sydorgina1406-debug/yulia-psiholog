@@ -116,6 +116,9 @@
     #экран-1 .блок__внутри { grid-template-columns: minmax(0, 36rem); position: static; width: auto; max-width: none; margin-left: var(--ML); margin-right: 0; }
     #экран-1 .шапка { width: auto; max-width: none; margin-left: var(--ML); margin-right: 2rem; }
   }
+  @media (min-width: 900px) and (max-width: 1199px) {
+    #экран-1 .первый-экран__картинка.картинка--край img { object-position: 18% 100%; }
+  }
   @media (min-width: 1300px) {
     #экран-1 { --z: 1.08; --H: 78svh; }
   }
@@ -130,6 +133,66 @@
     #экран-1 .шапка__лого .доп { display: none; }
     #экран-1 h1 .хвост { margin-top: 0; font-size: 1em; line-height: inherit; }
     #экран-1 h1 { font-size: 1.9rem; line-height: 1.1; }
+  }
+  /* 02.10.2026: на компьютере (от 1200 px) — новый кадр на прозрачном фоне и градиент; планшет и телефон прежние (решение человека) */
+  @media (min-width: 1200px) {
+    #экран-1 { background: linear-gradient(115deg, #17121c 0%, #241a2b 38%, #4a2140 66%, #8a2f4c 100%), radial-gradient(45% 70% at 76% 50%, rgba(255, 90, 110, .28), transparent 70%); --H: 96svh; --ML: max(2rem, 9vw); }
+    #экран-1 .первый-экран__картинка { background: none; width: min(calc(var(--H) * .67), calc(100vw - 36rem - var(--ML) - 1rem)); right: max(1rem, 8vw); }
+    #экран-1 .первый-экран__картинка.картинка--край img { object-fit: cover; object-position: 46% 0; -webkit-mask-image: none; mask-image: none; }
+  }
+  /* 02.10.2026: планшет и телефон — вариант «Кино» (дизайнер, выбор человека): портрет во всю ширину, низ растворяется в градиенте */
+  /* Вариант 1 · «Кино»: портрет во всю ширину, низ растворяется в градиенте, заголовок лежит на затухании.
+     Компьютер (от 1200 px) не трогается. */
+  @media (max-width: 1199px) {
+    #экран-1 {
+      position: relative; overflow: hidden; min-height: 0; padding-bottom: 2.5rem;
+      background:
+        radial-gradient(70% 34% at 50% 26%, rgba(138, 47, 76, .55), transparent 72%),
+        linear-gradient(180deg, #17121c 0%, #241a2b 42%, #4a2140 78%, #8a2f4c 100%);
+    }
+    #экран-1 .шапка { position: absolute; top: 0; left: 0; right: 0; z-index: 3; }
+    #экран-1 .блок__внутри { display: grid; grid-template-columns: minmax(0, 1fr); padding-top: 0; position: relative; }
+    #экран-1 .первый-экран__картинка {
+      order: -1; position: relative; inset: auto; z-index: 0;
+      width: 100vw; max-width: none; height: clamp(500px, 70svh, 620px); aspect-ratio: auto;
+      margin: 0 calc(50% - 50vw) -8.5rem; padding-top: 3.5rem;
+      background: none; border-radius: 0; overflow: visible;
+    }
+    #экран-1 .первый-экран__картинка.картинка--край img {
+      position: static; display: block; width: 100%; height: 100%; max-width: none; max-height: none;
+      object-fit: cover; object-position: 50% 0;
+      -webkit-mask-image: linear-gradient(180deg, #000 0, #000 52%, rgba(0,0,0,.5) 66%, rgba(0,0,0,.1) 82%, transparent 95%);
+              mask-image: linear-gradient(180deg, #000 0, #000 52%, rgba(0,0,0,.5) 66%, rgba(0,0,0,.1) 82%, transparent 95%);
+    }
+    #экран-1 .первый-экран__текст { position: relative; z-index: 1; }
+    #экран-1 .кикер, #экран-1 h1 { text-shadow: 0 2px 18px rgba(23, 18, 28, .75), 0 0 2px rgba(23, 18, 28, .35); }
+    #экран-1 h1 { font-size: 2rem; line-height: 1.08; }
+  }
+  /* планшет 600–899: тот же кадр, колонка текста по центру */
+  @media (min-width: 600px) and (max-width: 899px) {
+    #экран-1 .первый-экран__картинка { height: clamp(560px, 66svh, 700px); margin-bottom: -10rem; }
+    #экран-1 .первый-экран__картинка.картинка--край img { object-fit: contain; object-position: 50% 0; }
+    #экран-1 .первый-экран__текст { width: min(100%, 36rem); margin-inline: auto; }
+    #экран-1 h1 { font-size: 2.6rem; }
+  }
+  /* широкий планшет 900–1199: как на компьютере — текст слева, Юлия справа, левый край кадра растворяется */
+  @media (min-width: 900px) and (max-width: 1199px) {
+    #экран-1 { min-height: min(100svh, 960px); padding-bottom: 3rem;
+      background:
+        radial-gradient(40% 55% at 74% 40%, rgba(255, 90, 110, .22), transparent 70%),
+        linear-gradient(115deg, #17121c 0%, #241a2b 40%, #4a2140 70%, #8a2f4c 100%); }
+    #экран-1 .шапка { position: relative; width: auto; margin-left: 2rem; margin-right: 2rem; }
+    #экран-1 .блок__внутри { display: block; position: static; margin-left: 2rem; padding-top: 4rem; }
+    #экран-1 .первый-экран__текст { width: min(30rem, 52vw); }
+    #экран-1 h1 { font-size: 2.75rem; text-shadow: none; }
+    #экран-1 .первый-экран__картинка {
+      position: absolute; right: 0; bottom: 0; left: auto; margin: 0; padding: 0;
+      width: 52vw; top: 4.5rem; height: auto; }
+    #экран-1 .первый-экран__картинка.картинка--край img {
+      object-fit: cover; object-position: 50% 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%), linear-gradient(180deg, #000 72%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, #000 22%), linear-gradient(180deg, #000 72%, transparent 100%);
+      -webkit-mask-composite: source-in; mask-composite: intersect; }
   }
   </style>
   <div class="блок__внутри">
@@ -150,7 +213,7 @@
 </svg> Напишите, даже если не знаете, с чего начать. Я отвечу и расспрошу сама — дальше уже не одна</p>
     </div>
     <figure class="картинка картинка--фото картинка--край первый-экран__картинка" style="--лицо-в-кадре: .30">
-      <picture><source media="(max-width: 899px)" srcset="img/portret-shirokiy.webp"><img src="img/portret-shirokiy.webp" alt="Юлия Судоргина, психолог: сидит за столом, спокойный взгляд" data-лицо="30,28" fetchpriority="high"></picture>
+      <picture><source media="(min-width: 1200px)" srcset="img/yulia-komp.webp"><source media="(max-width: 1199px)" srcset="img/yulia-telefon.webp"><img src="img/yulia-telefon.webp" alt="Юлия Судоргина, психолог" data-лицо="30,28" fetchpriority="high"></picture>
     </figure>
   </div>
 </section>
