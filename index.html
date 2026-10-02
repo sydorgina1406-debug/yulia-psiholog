@@ -125,7 +125,7 @@
   @media (max-width: 899px) {
     #экран-1 { min-height: 0; padding-bottom: 2rem; }
     #экран-1 .блок__внутри { grid-template-columns: minmax(0, 1fr); }
-    #экран-1 .первый-экран__картинка { width: 100vw; height: 330px; max-width: none; margin: 0 calc(50% - 50vw) .75rem; }
+    #экран-1 .первый-экран__картинка { width: 100vw; height: 270px; max-width: none; margin: 0 calc(50% - 50vw) .75rem; }
     #экран-1 .первый-экран__картинка img { width: 100%; height: 100%; object-fit: cover; object-position: 6% 100%; -webkit-mask-image: none; mask-image: none; }
     #экран-1 .шапка__лого .доп { display: none; }
     #экран-1 h1 .хвост { margin-top: 0; font-size: 1em; line-height: inherit; }
@@ -191,48 +191,53 @@
       <ol class="дорога__шаги">
         <li class="шаг">
           <span class="шаг__номер" aria-hidden="true"></span>
-          <div class="шаг__карточка">
-
-            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-1-phone.webp" alt="Рисунок: телефон с перепиской" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
-            <h3 class="шаг__имя">Пишете</h3>
-            <p class="шаг__текст">Можно как есть, хоть одной строкой. Не нужно заранее формулировать запрос или рассказывать всю историю: я отвечу, задам вопросы, если нужно, и дальше сориентируемся</p>
-          </div>
+          <details class="шаг__карточка" open>
+            <summary class="шаг__шапка"><h3 class="шаг__имя">Пишете</h3></summary>
+            <div class="шаг__тело">
+              <p class="шаг__текст">Можно как есть, хоть одной строкой. Не нужно заранее формулировать запрос или рассказывать всю историю: я отвечу, задам вопросы, если нужно, и дальше сориентируемся</p>
+              <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-1-phone.webp" alt="Рисунок: телефон с перепиской" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            </div>
+          </details>
         </li>
         <li class="шаг">
           <span class="шаг__номер" aria-hidden="true"></span>
-          <div class="шаг__карточка">
-
-            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-2-clock.webp" alt="Рисунок: часы" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
-            <h3 class="шаг__имя">Договариваемся о времени</h3>
-            <p class="шаг__текст">Встречаемся онлайн в MAX или Телемосте, я пришлю ссылку. Важно, чтобы вы были одни в комнате и вас никто не отвлекал, и обязательно с включённой камерой: для моей работы важно вас видеть. Если есть возможность, поставьте рядом второй стул</p>
-          </div>
+          <details class="шаг__карточка">
+            <summary class="шаг__шапка"><h3 class="шаг__имя">Договариваемся о времени</h3></summary>
+            <div class="шаг__тело">
+              <p class="шаг__текст">Встречаемся онлайн в MAX или Телемосте, я пришлю ссылку. Важно, чтобы вы были одни в комнате и вас никто не отвлекал, и обязательно с включённой камерой: для моей работы важно вас видеть. Если есть возможность, поставьте рядом второй стул</p>
+              <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-2-clock.webp" alt="Рисунок: часы" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            </div>
+          </details>
         </li>
         <li class="шаг">
           <span class="шаг__номер" aria-hidden="true"></span>
-          <div class="шаг__карточка">
-
-            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-3-talk.webp" alt="Рисунок: разговор двух женщин" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
-            <h3 class="шаг__имя">Сначала разбираемся, что происходит</h3>
-            <p class="шаг__текст">Расспрошу вас о ситуации: что случилось, что сейчас беспокоит больше всего, что вы чувствуете. По ходу разговора у меня появляются предположения, с чем тут можно работать и куда идти дальше</p>
-          </div>
+          <details class="шаг__карточка">
+            <summary class="шаг__шапка"><h3 class="шаг__имя">Сначала разбираемся, что происходит</h3></summary>
+            <div class="шаг__тело">
+              <p class="шаг__текст">Расспрошу вас о ситуации: что случилось, что сейчас беспокоит больше всего, что вы чувствуете. По ходу разговора у меня появляются предположения, с чем тут можно работать и куда идти дальше</p>
+              <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-3-talk.webp" alt="Рисунок: разговор двух женщин" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            </div>
+          </details>
         </li>
         <li class="шаг">
           <span class="шаг__номер" aria-hidden="true"></span>
-          <div class="шаг__карточка">
-
-            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-4-write.webp" alt="Рисунок: рука с ручкой над тетрадью" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
-            <h3 class="шаг__имя">Дальше работаем</h3>
-            <p class="шаг__текст">Заранее сказать, как именно пройдёт встреча, нельзя. Иногда больше разговариваем: если ситуация острая, вам в первую очередь нужно проговорить то, что происходит. Иногда работаем с образами и чувствами, можем использовать второй стул. Иногда беру метафорические карты или фигурки на онлайн-платформе. Способ я выбираю уже во время встречи — по тому, с чем вы пришли. Около часа, иногда полтора — доплачивать не нужно</p>
-          </div>
+          <details class="шаг__карточка">
+            <summary class="шаг__шапка"><h3 class="шаг__имя">Дальше работаем</h3></summary>
+            <div class="шаг__тело">
+              <p class="шаг__текст">Заранее сказать, как именно пройдёт встреча, нельзя. Иногда больше разговариваем: если ситуация острая, вам в первую очередь нужно проговорить то, что происходит. Иногда работаем с образами и чувствами, можем использовать второй стул. Иногда беру метафорические карты или фигурки на онлайн-платформе. Способ я выбираю уже во время встречи — по тому, с чем вы пришли. Около часа, иногда полтора — доплачивать не нужно</p>
+              <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-4-write.webp" alt="Рисунок: рука с ручкой над тетрадью" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            </div>
+          </details>
         </li>
         <li class="шаг">
           <span class="шаг__номер" aria-hidden="true"></span>
-          <div class="шаг__карточка">
-
-            <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-5-window.webp" alt="Рисунок: открытое окно" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
-            <h3 class="шаг__имя">В конце подводим итог</h3>
-            <p class="шаг__текст">Смотрим, что изменилось за время работы, что вы сейчас чувствуете и с чем уходите. Иногда даю домашнее задание, иногда оно вообще не нужно. А понаблюдать после встречи за собой и своим состоянием попрошу в любом случае</p>
-          </div>
+          <details class="шаг__карточка">
+            <summary class="шаг__шапка"><h3 class="шаг__имя">В конце подводим итог</h3></summary>
+            <div class="шаг__тело">
+              <p class="шаг__текст">Смотрим, что изменилось за время работы, что вы сейчас чувствуете и с чем уходите. Иногда даю домашнее задание, иногда оно вообще не нужно. А понаблюдать после встречи за собой и своим состоянием попрошу в любом случае</p>
+              <div class="шаг__картинка"><figure class="фото" style="margin:0;width:100%;height:100%;box-shadow:none;background:none;border:0;border-radius:0"><img src="img/shag-5-window.webp" alt="Рисунок: открытое окно" loading="lazy" width="88" height="88" style="width:100%;height:100%;object-fit:cover;display:block"></figure></div>
+            </div>
+          </details>
         </li>
       </ol>
       <p class="врезка">Специально готовиться к встрече не нужно. Не надо придумывать «правильный запрос» или заранее составлять рассказ — можно прийти и начать с того, что беспокоит больше всего</p>
@@ -354,6 +359,10 @@
         <details class="вопрос" open>
           <summary>А если муж не пойдёт? Он всё равно не изменится</summary>
           <p class="вопрос__ответ">Никого вокруг мы не меняем. Работаем только с вами, приходить вдвоём не нужно</p>
+        </details>
+        <details class="вопрос">
+          <summary>А если я одна или уже развелась?</summary>
+          <p class="вопрос__ответ">Если вы одна и хотите построить отношения, с этим можно работать, и даже нужно. А развод — это часть вашей истории отношений, и с ним мы тоже работаем</p>
         </details>
         <details class="вопрос">
           <summary>Мне сорок четыре, разве не поздно?</summary>

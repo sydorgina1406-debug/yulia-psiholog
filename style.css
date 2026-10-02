@@ -1739,6 +1739,23 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .шаг__карточка { grid-template-columns: minmax(0, 1fr) 13rem; }
 }
 
+#экран-04 details.шаг__карточка { display: block; padding: 0; }
+#экран-04 .шаг__шапка { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; min-height: 2.75rem; padding: .875rem 1.25rem; }
+#экран-04 .шаг__шапка::-webkit-details-marker { display: none; }
+#экран-04 .шаг__шапка::after { content: "+"; font-size: var(--кегль-лид); line-height: 1; font-weight: 400; color: var(--цвет-акцент-тёмный, var(--цвет-акцент)); transition: transform .2s ease; }
+#экран-04 details[open] > .шаг__шапка::after { transform: rotate(45deg); }
+#экран-04 .шаг__шапка:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: var(--радиус-малый, var(--радиус)); }
+#экран-04 .шаг__тело { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; padding: 0 1.25rem 1.25rem; }
+#экран-04 .шаг__тело .шаг__текст { grid-column: 1; grid-row: auto; }
+#экран-04 .шаг__тело .шаг__картинка { position: static; grid-column: 1; grid-row: auto; width: 7.5rem; height: 5.5rem; margin: 0; overflow: hidden; justify-self: start; align-self: start; }
+@media (min-width: 900px) {
+  #экран-04 details.шаг__карточка { padding: 0; grid-template-columns: none; }
+  #экран-04 .шаг__шапка { min-height: 3.5rem; padding: .875rem 2rem; }
+  #экран-04 .шаг__тело { grid-template-columns: minmax(0, 1fr) 9rem; column-gap: 2rem; align-items: center; padding: 0 2rem 1.5rem; }
+  #экран-04 .шаг__тело .шаг__текст { grid-column: 1; grid-row: 1; }
+  #экран-04 .шаг__тело .шаг__картинка { grid-column: 2; grid-row: 1; width: 9rem; height: 6.5rem; margin: 0; justify-self: end; }
+}
+
 /* экран 05 */
 #экран-05.тёмный .кикер { color: color-mix(in srgb, var(--цвет-тёплый) 78%, var(--цвет-тёмный-текст)); }
 #экран-05 .кикер { width: fit-content; align-self: flex-start; justify-self: start; }
