@@ -1669,6 +1669,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 }
 
 /* экран 02 */
+#экран-02.светлый .кикер { width: fit-content; align-self: flex-start; justify-self: start; }
 #экран-02.тёмный .кикер { color: color-mix(in srgb, var(--цвет-тёплый) 78%, var(--цвет-тёмный-текст)); }
 #экран-02 .письмо { max-width: 52rem; margin-inline: auto; }
 #экран-02 .письмо__шапка { display: grid; gap: .875rem; margin-bottom: clamp(1.75rem, 4vw, 3rem); }
@@ -1690,37 +1691,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 #экран-02.светлый .письмо__строка { border-color: var(--цвет-линия); }
 #экран-02.тёмный .письмо__строка { border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
 
-/* экран 03 */
-#экран-03.тёмный .кикер { color: color-mix(in srgb, var(--цвет-тёплый) 78%, var(--цвет-тёмный-текст)); }
-#экран-03 .перемена { display: grid; gap: clamp(2rem, 4vw, 3rem); min-width: 0; }
-#экран-03 .перемена > * { min-width: 0; }
-#экран-03 .перемена__шапка { display: grid; gap: .875rem; margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem); }
-#экран-03 .перемена__шапка > * { margin: 0; }
-#экран-03 .перемена__список { list-style: none; margin: 0; padding: 0; }
-#экран-03 .перемена__строка { display: grid; gap: .625rem; padding-block: clamp(1.125rem, 2.4vw, 1.625rem); border-top: 1px solid var(--цвет-линия); }
-#экран-03 .перемена__строка:last-child { border-bottom: 1px solid var(--цвет-линия); }
-#экран-03 .перемена__было { margin: 0; font-weight: 600; font-size: var(--кегль-лид); line-height: 1.3; letter-spacing: -0.01em; }
-#экран-03 .перемена__стало { margin: 0; padding-left: 1rem; border-left: 2px solid var(--цвет-акцент); font-size: var(--кегль-текст); line-height: 1.6; }
-#экран-03 .перемена__бок { display: grid; gap: 1.25rem; align-content: start; }
-#экран-03 .перемена__бок .фото { margin: 0; }
-#экран-03 .перемена__бок .заглушка-картинки { width: 100%; border-radius: var(--радиус-карточки, var(--радиус)); }
-#экран-03 .перемена__итог { padding: 1.5rem 1.625rem; border-radius: var(--радиус-карточки, var(--радиус)); border: 1px solid var(--цвет-линия); box-shadow: var(--тень); }
-#экран-03 .перемена__итог b { display: block; font-weight: 700; font-size: var(--кегль-лид); line-height: 1.35; }
-@media (min-width: 900px) {
-  #экран-03 .перемена { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); column-gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
-  #экран-03 .перемена__строка { padding-left: 0; }
-  #экран-03 .перемена__бок { position: sticky; top: 2rem; }
-}
-#экран-03.светлый .перемена__было { color: var(--цвет-текст); }
-#экран-03.тёмный .перемена__было { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
-#экран-03.светлый .перемена__стало { color: var(--цвет-текст-мягкий); border-left-color: var(--цвет-акцент); }
-#экран-03.тёмный .перемена__стало { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 80%, transparent); border-left-color: var(--тёплый-ключа, var(--цвет-акцент-тёмный)); }
-#экран-03.светлый .перемена__строка { border-color: var(--цвет-линия); }
-#экран-03.тёмный .перемена__строка { border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
-#экран-03.светлый .перемена__итог { background: var(--цвет-фон-2); border-color: var(--цвет-линия); border-top: 3px solid var(--цвет-акцент); color: var(--цвет-текст); }
-#экран-03.тёмный .перемена__итог { background: var(--цвет-тёмный-фон-2); border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); border-top: 3px solid var(--тёплый-ключа, var(--цвет-акцент-тёмный)); color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
-
 /* экран 04 */
+#экран-04 .кикер { width: fit-content; align-self: flex-start; justify-self: start; }
 #экран-04.тёмный .кикер { color: color-mix(in srgb, var(--цвет-тёплый) 78%, var(--цвет-тёмный-текст)); }
 #экран-04 .дорога { max-width: 56rem; margin-inline: auto; }
 #экран-04 .дорога__шапка { display: grid; gap: .875rem; margin-bottom: clamp(1.75rem, 4vw, 3rem); }
@@ -1756,7 +1728,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 #экран-04.тёмный .шаг__имя { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
 #экран-04.светлый .шаг__текст { color: var(--цвет-текст-мягкий); }
 #экран-04.тёмный .шаг__текст { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 75%, transparent); }
-#экран-04.светлый .врезка { background: var(--цвет-фон-2); border-color: var(--цвет-линия); border-left-color: var(--цвет-акцент); color: var(--цвет-текст); }
+#экран-04.светлый .врезка { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); border-left-color: var(--цвет-акцент); color: var(--цвет-текст); }
 #экран-04.тёмный .врезка { background: var(--цвет-тёмный-фон-2, var(--цвет-тёмный-фон)); border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); border-left-color: var(--цвет-акцент); color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
 #экран-04 .шаг__карточка { position: relative; }
 #экран-04 .шаг__картинка { position: static; width: 12rem; max-width: 100%; height: 9rem; overflow: visible; border-radius: 0; margin: -.25rem 0 .25rem -.5rem; }
@@ -1768,6 +1740,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 }
 
 /* экран 05 */
+#экран-05.тёмный .кикер { color: color-mix(in srgb, var(--цвет-тёплый) 78%, var(--цвет-тёмный-текст)); }
 #экран-05 .кикер { width: fit-content; align-self: flex-start; justify-self: start; }
 #экран-05 .обо-мне { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 5vw, 3.5rem); max-width: 62rem; margin-inline: auto; }
 #экран-05 .обо-мне__шапка { display: grid; gap: .875rem; margin-bottom: clamp(1.25rem, 3vw, 2rem); }
@@ -1842,6 +1815,12 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 #экран-07 .слово__подпись { display: grid; gap: .25rem; margin: 0; padding-top: 1.125rem; border-top: 1px solid transparent; }
 #экран-07 .слово__имя { font-weight: 600; font-size: var(--кегль-лид); line-height: 1.3; font-style: normal; }
 #экран-07 .слово__источник { font-size: var(--кегль-мелкий); line-height: 1.4; }
+@media (max-width: 899px) {
+  #экран-07 .слова__список { display: flex; gap: 1rem; align-items: stretch; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; scrollbar-width: none; padding-bottom: .5rem; }
+  #экран-07 .слова__список::-webkit-scrollbar { display: none; }
+  #экран-07 .слова__список > li { flex: 0 0 85%; min-width: 0; scroll-snap-align: start; display: flex; }
+  #экран-07 .слово { width: 100%; }
+}
 @media (min-width: 900px) {
   #экран-07 .слова__список { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
   #экран-07 .слово { padding: 2rem 1.75rem; }
@@ -1863,10 +1842,10 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 /* экран 08 */
 #экран-08.тёмный .кикер { color: color-mix(in srgb, var(--цвет-тёплый) 78%, var(--цвет-тёмный-текст)); }
 #экран-08.тёмный .кнопка--главная { outline: 2px solid color-mix(in srgb, var(--цвет-акцент-яркий) 70%, transparent); }
-#экран-08 .вопросы { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 5vw, 3.5rem); max-width: 64rem; margin-inline: auto; }
-#экран-08 .вопросы__шапка { display: grid; gap: .875rem; margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem); }
-#экран-08 .вопросы__шапка > * { margin: 0; }
-#экран-08 .вопросы__список { min-width: 0; }
+#экран-08 .вопросник { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 5vw, 3.5rem); max-width: 64rem; margin-inline: auto; }
+#экран-08 .вопросник__шапка { display: grid; gap: .875rem; margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem); }
+#экран-08 .вопросник__шапка > * { margin: 0; }
+#экран-08 .вопросник__список { min-width: 0; }
 #экран-08 .вопрос { border-top: 1px solid var(--цвет-линия); }
 #экран-08 .вопрос:last-child { border-bottom: 1px solid var(--цвет-линия); }
 #экран-08 .вопрос summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline;
@@ -1884,8 +1863,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 #экран-08 .приглашение__заголовок { font-weight: 600; font-size: var(--кегль-лид); line-height: 1.25; }
 #экран-08 .приглашение .кнопка { justify-self: stretch; }
 @media (min-width: 900px) {
-  #экран-08 .вопросы { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
-  #экран-08 .вопросы__шапка { grid-column: 1 / -1; margin-bottom: 0; }
+  #экран-08 .вопросник { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
+  #экран-08 .вопросник__шапка { grid-column: 1 / -1; margin-bottom: 0; }
   #экран-08 .приглашение { position: sticky; top: 2rem; }
 }
 #экран-08.светлый .вопрос { border-color: var(--цвет-линия); }
