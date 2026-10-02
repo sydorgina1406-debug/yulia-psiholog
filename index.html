@@ -194,20 +194,42 @@
               mask-image: linear-gradient(90deg, transparent 0, #000 22%), linear-gradient(180deg, #000 72%, transparent 100%);
       -webkit-mask-composite: source-in; mask-composite: intersect; }
   }
-  /* 02.10.2026: кадр на готовом фиолетовом фоне (из Загрузок, по слову человека): у кадра свой фон, поэтому левый край плавно растворяется в тёмный цвет страницы (#170a29 — цвет левого края кадра) */
-  #экран-1 { background: #170a29 !important; }
+  /* 02.10.2026: кадр из Загрузок, вырезан по контуру (прозрачный фон) и поставлен на градиент страницы; фигура ближе к тексту (по слову человека) */
+  #экран-1 { background:
+      radial-gradient(52% 78% at 72% 46%, color-mix(in srgb, var(--цвет-акцент) 28%, transparent), transparent 72%),
+      linear-gradient(115deg, var(--цвет-тёмный-фон) 0%, var(--цвет-тёмный-фон-3) 36%, var(--цвет-тёмный-фон-2) 66%, color-mix(in srgb, var(--цвет-тёмный-фон-2) 80%, var(--цвет-акцент-тёмный)) 100%) !important; }
   #экран-1 .первый-экран__картинка { background: none !important; border-radius: 0 !important; overflow: visible !important; }
-  @media (min-width: 900px) {
-    #экран-1 { position: relative; overflow: hidden; }
-    #экран-1 .первый-экран__картинка { position: absolute !important; right: 0 !important; top: 0 !important; bottom: auto !important; left: auto !important; height: 100% !important; width: auto !important; aspect-ratio: 1169 / 1345 !important; margin: 0 !important; padding: 0 !important; }
-    #экран-1 .первый-экран__картинка.картинка--край img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 0 !important;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26%) !important; mask-image: linear-gradient(90deg, transparent 0, #000 26%) !important; }
+  @media (min-width: 1200px) {
+    #экран-1 { position: relative; overflow: hidden; --ML: max(2rem, 9vw); }
+    #экран-1 .первый-экран__картинка { position: absolute !important; top: auto !important; bottom: 0 !important; left: auto !important; right: max(1rem, 11vw) !important; height: calc(100% - 5rem) !important; width: auto !important; aspect-ratio: 1169 / 1345 !important; margin: 0 !important; padding: 0 !important; }
+    #экран-1 .первый-экран__картинка.картинка--край img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 0 !important; -webkit-mask-image: none !important; mask-image: none !important; }
   }
-  @media (max-width: 899px) {
-    #экран-1 { background: linear-gradient(180deg, #170a29 0%, #2a0f3a 60%, #4a1844 100%) !important; }
-    #экран-1 .первый-экран__картинка { width: 100vw !important; max-width: none !important; height: 118vw !important; max-height: 640px !important; margin: 0 calc(50% - 50vw) -5rem !important; padding: 0 !important; }
+  @media (min-width: 900px) and (max-width: 1199px) {
+    #экран-1 { position: relative; overflow: hidden; }
+    #экран-1 .первый-экран__картинка { position: absolute !important; right: 2vw !important; bottom: 0 !important; top: auto !important; left: auto !important; width: min(54vw, 600px) !important; height: auto !important; margin: 0 !important; padding: 0 !important; aspect-ratio: 1169 / 1345 !important; }
+    #экран-1 .первый-экран__картинка.картинка--край img { position: static !important; width: 100% !important; height: 100% !important; object-fit: contain !important; -webkit-mask-image: none !important; mask-image: none !important; }
+  }
+  /* планшет 521–899: компактный кадр по центру, текст ниже и не на лице */
+  @media (min-width: 521px) and (max-width: 899px) {
+    #экран-1 { background:
+        radial-gradient(60% 30% at 50% 24%, color-mix(in srgb, var(--цвет-акцент) 26%, transparent), transparent 72%),
+        linear-gradient(180deg, var(--цвет-тёмный-фон) 0%, var(--цвет-тёмный-фон-3) 45%, var(--цвет-тёмный-фон-2) 80%, color-mix(in srgb, var(--цвет-тёмный-фон-2) 80%, var(--цвет-акцент-тёмный)) 100%) !important; }
+    /* лицо ближе: фигура крупнее, по пояс, низ растворяется; текст начинается ниже лица и плеч */
+    #экран-1 .первый-экран__картинка { width: min(82vw, 600px) !important; max-width: none !important; height: auto !important; aspect-ratio: 1169 / 960 !important; margin: 0 auto -1.5rem !important; padding: 3.2rem 0 0 !important; box-sizing: content-box !important; }
     #экран-1 .первый-экран__картинка.картинка--край img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 0 !important;
       -webkit-mask-image: linear-gradient(180deg, #000 64%, transparent 98%) !important; mask-image: linear-gradient(180deg, #000 64%, transparent 98%) !important; }
+    #экран-1 .первый-экран__текст { width: min(100%, 36rem); margin-inline: auto; }
+  }
+  @media (max-width: 520px) {
+    #экран-1 { background:
+        radial-gradient(70% 34% at 50% 26%, color-mix(in srgb, var(--цвет-акцент) 26%, transparent), transparent 72%),
+        linear-gradient(180deg, var(--цвет-тёмный-фон) 0%, var(--цвет-тёмный-фон-3) 45%, var(--цвет-тёмный-фон-2) 80%, color-mix(in srgb, var(--цвет-тёмный-фон-2) 80%, var(--цвет-акцент-тёмный)) 100%) !important; }
+    /* лицо крупнее: кадр во всю ширину с обрезкой по бокам, фигура по пояс; заголовок начинается с груди и ложится на затухание */
+    #экран-1 .первый-экран__картинка { width: 100vw !important; max-width: none !important; height: 138vw !important; max-height: 640px !important; margin: 0 calc(50% - 50vw) -54vw !important; padding: 3.2rem 0 0 !important; box-sizing: border-box !important; }
+    #экран-1 .первый-экран__картинка.картинка--край img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 0 !important;
+      -webkit-mask-image: linear-gradient(180deg, #000 46%, rgba(0,0,0,.35) 70%, transparent 92%) !important; mask-image: linear-gradient(180deg, #000 46%, rgba(0,0,0,.35) 70%, transparent 92%) !important; }
+    #экран-1 .кикер, #экран-1 h1 { text-shadow: 0 2px 18px rgba(23, 18, 28, .8), 0 0 2px rgba(23, 18, 28, .4); }
+    #экран-1 .кикер { color: var(--цвет-тёплый-мягкий, #ffc9cd); width: fit-content; padding: .3rem .75rem .3rem .6rem; border-radius: 999px; background: color-mix(in srgb, var(--цвет-тёмный-фон) 82%, transparent); text-shadow: none; }
   }
   </style>
   <div class="блок__внутри">
